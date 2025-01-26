@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="CSS/final_cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+        <!-- Header Section -->
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="Company Logo"> 
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+    </div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact Us</a>
+    </div>
+    <div class="icons">
+        <!-- Favorites Icon -->
+        <a href="favorites.html" aria-label="Favorites">
+            <img src="images/Favorites.png" alt="Favorites">
+        </a>
+        <!-- Cart Icon -->
+        <a href="cart.html" aria-label="Cart">
+            <img src="images/cart.png" alt="Cart">
+        </a>
+        <!-- Profile Icon -->
+        <a href="profile.html" aria-label="Profile">
+            <img src="images/user.png" alt="Profile">
+        </a>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Shopping Cart -->
+        <section class="cart">
+            <p>Shopping Cart</p>
+            <div class="cart-item" id="iphone">
+                <img src="images/iphone.png" alt="Apple iPhone 14 Pro Max">
+                <div class="item-details">
+                    <h3>Apple iPhone 14 Pro Max</h3>
+                </div>
+                <div class="quantity">
+                    <button onclick="decreaseQuantity('iphone')">-</button>
+                    <span id="iphone-quantity">1</span>
+                    <button onclick="increaseQuantity('iphone')">+</button>
+                </div>
+                <div class="price">$1399</div>
+                <div class="remove" onclick="removeItem('iphone')">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="cart-item" id="airpods">
+                <img src="images/headset.png" alt="AirPods Max Silver">
+                <div class="item-details">
+                    <h3>AirPods Max Silver</h3>
+                </div>
+                <div class="quantity">
+                    <button onclick="decreaseQuantity('airpods')">-</button>
+                    <span id="airpods-quantity">1</span>
+                    <button onclick="increaseQuantity('airpods')">+</button>
+                </div>
+                <div class="price">$549</div>
+                <div class="remove" onclick="removeItem('airpods')">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="cart-item" id="watch">
+                <img src="images/watch.png" alt="Apple Watch Series 9">
+                <div class="item-details">
+                    <h3>Apple Watch Series 9</h3>
+                </div>
+                <div class="quantity">
+                    <button onclick="decreaseQuantity('watch')">-</button>
+                    <span id="watch-quantity">1</span>
+                    <button onclick="increaseQuantity('watch')">+</button>
+                </div>
+                <div class="price">$399</div>
+                <div class="remove" onclick="removeItem('watch')">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Summary -->
+        <section class="order-summary">
+            <h2>Order Summary</h2>
+            <label for="bonus-card" class="label">Your bonus card number</label>
+            <div class="input-container">
+                <input type="text" id="bonus-card" class="input" placeholder="Enter Card Number" />
+                <button class="button">Apply</button>
+            </div>
+
+            <div class="summary-container">
+                <div class="summary-row">
+                    <span class="label">Subtotal</span>
+                    <span class="value" id="subtotal">$2347</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Estimated Tax</span>
+                    <span class="value" id="tax">$50</span>
+                </div>
+                <div class="summary-row">
+                    <span class="label">Estimated shipping & Handling</span>
+                    <span class="value" id="shipping">$29</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span class="label">Total</span>
+                    <span class="value" id="total">$2426</span>
+                </div>
+            </div>
+            <button class="checkout" onclick="checkout()">Checkout</button>
+        </section>
+    </main>
+
+
+
+    <!-- Footer Section -->
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>ELECTTROVIA</h2>
+                <p>
+                    We are a residential interior design firm located in Portland. Our boutique-studio offers more than
+                </p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Bonus program</a></li>
+                        <li><a href="#">Gift cards</a></li>
+                        <li><a href="#">Credit and payment</a></li>
+                        <li><a href="#">Service contracts</a></li>
+                        <li><a href="#">Non-cash account</a></li>
+                        <li><a href="#">Payment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Assistance to the buyer</h4>
+                    <ul>
+                        <li><a href="#">Find an order</a></li>
+                        <li><a href="#">Terms of delivery</a></li>
+                        <li><a href="#">Exchange and return of goods</a></li>
+                        <li><a href="#">Guarantee</a></li>
+                        <li><a href="#">Frequently asked questions</a></li>
+                        <li><a href="#">Terms of use of the site</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Functionality -->
+
+
+    <script>
+        function increaseQuantity(itemId) {
+            const quantityElement = document.getElementById(`${itemId}-quantity`);
+            let quantity = parseInt(quantityElement.textContent);
+            quantityElement.textContent = quantity + 1;
+            updateTotal();
+        }
+
+        function decreaseQuantity(itemId) {
+            const quantityElement = document.getElementById(`${itemId}-quantity`);
+            let quantity = parseInt(quantityElement.textContent);
+            if (quantity > 1) {
+                quantityElement.textContent = quantity - 1;
+                updateTotal();
+            }
+        }
+
+        function removeItem(itemId) {
+            const itemElement = document.getElementById(itemId);
+            if (itemElement) {
+                itemElement.remove();
+                updateTotal();
+            }
+        }
+
+        function updateTotal() {
+            let subtotal = 0;
+            const items = document.querySelectorAll('.cart-item');
+            items.forEach(item => {
+                const price = parseFloat(item.querySelector('.price').textContent.replace('$', ''));
+                const quantity = parseInt(item.querySelector('.quantity span').textContent);
+                subtotal += price * quantity;
+            });
+
+            const tax = subtotal * 0.1; // 10% tax
+            const shipping = 29; // Fixed shipping cost
+            const total = subtotal + tax + shipping;
+
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('shipping').textContent = `$${shipping.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        function checkout() {
+            alert("Order placed successfully!");
+        }
+    </script>
+</body>
+</html>
